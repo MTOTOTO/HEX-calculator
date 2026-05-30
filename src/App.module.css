@@ -1,0 +1,141 @@
+/* ── Outer shell ─────────────────────────────────────────────────────────── */
+:root {
+  --bg-deep:   #0d1117;
+  --bg-card:   #161b22;
+  --bg-btn:    #21262d;
+  --bg-op:     #388bfd;
+  --bg-eq:     #3fb950;
+  --bg-clr:    #f85149;
+  --text:      #e6edf3;
+  --text-dim:  #8b949e;
+  --accent:    #388bfd;
+  --radius:    10px;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-deep);
+  font-family: 'Courier New', Courier, monospace;
+}
+
+/* ── Card ────────────────────────────────────────────────────────────────── */
+.calculator {
+  background: var(--bg-card);
+  border: 1px solid #30363d;
+  border-radius: 18px;
+  padding: 24px 20px;
+  width: 320px;
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.6);
+}
+
+/* ── Header ──────────────────────────────────────────────────────────────── */
+.header {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  margin-bottom: 14px;
+  color: var(--accent);
+  font-size: 1.1rem;
+  font-weight: bold;
+  letter-spacing: 0.12em;
+}
+
+.sub {
+  color: var(--text-dim);
+  font-size: 0.75rem;
+  font-weight: normal;
+  letter-spacing: 0.06em;
+}
+
+/* ── Display ─────────────────────────────────────────────────────────────── */
+.display {
+  background: #010409;
+  border: 1px solid #30363d;
+  border-radius: var(--radius);
+  padding: 14px 16px;
+  text-align: right;
+  font-size: 2.4rem;
+  color: var(--bg-eq);
+  letter-spacing: 0.1em;
+  min-height: 64px;
+  word-break: break-all;
+  margin-bottom: 6px;
+}
+
+/* ── Operator indicator ───────────────────────────────────────────────────── */
+.opIndicator {
+  text-align: right;
+  font-size: 0.78rem;
+  color: var(--text-dim);
+  padding-right: 4px;
+  margin-bottom: 10px;
+  min-height: 16px;
+}
+
+/* ── Button grid ─────────────────────────────────────────────────────────── */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+  margin-top: 14px;
+}
+
+/* ── Base button ─────────────────────────────────────────────────────────── */
+.grid button {
+  border: none;
+  border-radius: var(--radius);
+  padding: 16px 0;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: filter 0.12s, transform 0.08s;
+  color: var(--text);
+}
+
+.grid button:active {
+  transform: scale(0.93);
+  filter: brightness(0.85);
+}
+
+/* ── Digit buttons ───────────────────────────────────────────────────────── */
+.digitBtn {
+  background: var(--bg-btn);
+}
+
+.digitBtn:hover {
+  filter: brightness(1.35);
+}
+
+/* ── Operator buttons ────────────────────────────────────────────────────── */
+.opBtn {
+  background: var(--bg-op);
+}
+
+.opBtn:hover {
+  filter: brightness(1.2);
+}
+
+/* ── Equals button (span 2 cols) ─────────────────────────────────────────── */
+.equalBtn {
+  background: var(--bg-eq);
+  grid-column: span 2;
+}
+
+.equalBtn:hover {
+  filter: brightness(1.2);
+}
+
+/* ── Clear button (span 2 cols) ──────────────────────────────────────────── */
+.clearBtn {
+  background: var(--bg-clr);
+  grid-column: span 2;
+}
+
+.clearBtn:hover {
+  filter: brightness(1.2);
+}
